@@ -22,7 +22,7 @@ public class AndroidMobileAppSampleActivity extends Activity {
         mainWebView.setWebViewClient(new MyCustomWebViewClient());
         mainWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         
-        mainWebView.loadUrl("http://mobile-sample-app.heroku.com");
+        mainWebView.loadUrl("http://google.com");
     }
     
     private class MyCustomWebViewClient extends WebViewClient {

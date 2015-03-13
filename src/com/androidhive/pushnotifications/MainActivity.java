@@ -25,7 +25,7 @@ import com.google.android.gcm.GCMRegistrar;
 public class MainActivity extends Activity {
 	// label to display gcm messages
 	TextView lblMessage;
-	WebView mainWebView;
+//	WebView mainWebView;
 	
 	// Asyntask
 	AsyncTask<Void, Void, Void> mRegisterTask;
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
 		GCMRegistrar.checkManifest(this);
 
 		lblMessage = (TextView) findViewById(R.id.lblMessage);
-		mainWebView = (WebView) findViewById(R.id.webView1);
+		//mainWebView = (WebView) findViewById(R.id.webView1);
 		
 		registerReceiver(mHandleMessageReceiver, new IntentFilter(
 				DISPLAY_MESSAGE_ACTION));
@@ -147,13 +147,13 @@ public class MainActivity extends Activity {
 			
 			//load url into web view
 			
-	        
+	      /*  
 	        webSettings = mainWebView.getSettings();
 	        
 	     //   mainWebView.setWebViewClient(new MyCustomWebViewClient());
 	        mainWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 	        
-	        mainWebView.loadUrl("http://google.com");
+	        mainWebView.loadUrl("http://google.com");*/
 	    
 	    
 			// Releasing wake lock
