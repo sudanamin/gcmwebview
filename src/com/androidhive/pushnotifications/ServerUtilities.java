@@ -3,6 +3,7 @@ package com.androidhive.pushnotifications;
 import static com.androidhive.pushnotifications.CommonUtilities.SERVER_URL;
 import static com.androidhive.pushnotifications.CommonUtilities.TAG;
 import static com.androidhive.pushnotifications.CommonUtilities.displayMessage;
+import static com.androidhive.pushnotifications.CommonUtilities.editor;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -50,6 +51,8 @@ public final class ServerUtilities {
                 post(serverUrl, params);
                 GCMRegistrar.setRegisteredOnServer(context, true);
                 String message = context.getString(R.string.server_registered);
+                editor.putInt("checker", 1);
+        		editor.commit();
                 CommonUtilities.displayMessage(context, message);
                 return;
             } catch (IOException e) {

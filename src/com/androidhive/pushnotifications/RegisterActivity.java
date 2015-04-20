@@ -1,9 +1,13 @@
 package com.androidhive.pushnotifications;
 
 import static com.androidhive.pushnotifications.CommonUtilities.SENDER_ID;
+import static com.androidhive.pushnotifications.CommonUtilities.editor;
+import static com.androidhive.pushnotifications.CommonUtilities.settings;
+import static com.androidhive.pushnotifications.CommonUtilities.KEE_LOGIN;
 import static com.androidhive.pushnotifications.CommonUtilities.SERVER_URL;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +20,8 @@ public class RegisterActivity extends Activity {
 	// Internet detector
 	ConnectionDetector cd;
 	
+	
+	
 	// UI elements
 	EditText txtName;
 	EditText txtEmail;
@@ -26,6 +32,20 @@ public class RegisterActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		////////////////
+		settings = getSharedPreferences(KEE_LOGIN, 0);
+	    editor = settings.edit();
+		if(settings.getInt("checker", 0) ==1){
+			Intent i = new Intent(getApplicationContext(), AndroidMobileAppSampleActivity.class);
+			
+			// start AndroidMobileAppSampleActivity activity					
+		
+			startActivity(i);
+			finish();
+		}
+		
+		
 		setContentView(R.layout.activity_register);
 		
 		cd = new ConnectionDetector(getApplicationContext());

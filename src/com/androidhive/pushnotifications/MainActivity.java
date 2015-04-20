@@ -84,10 +84,10 @@ public class MainActivity extends Activity {
 			GCMRegistrar.register(this, SENDER_ID);
 		} else {
 			// Device is already registered on GCM
-			if (GCMRegistrar.isRegisteredOnServer(this)) {
+		/*if (GCMRegistrar.isRegisteredOnServer(this)) {
 				// Skips registration.				
 				Toast.makeText(getApplicationContext(), "Already registered with GCM", Toast.LENGTH_LONG).show();
-			} else {
+			} else {*/
 				// Try to register again, but not in the UI thread.
 				// It's also necessary to cancel the thread onDestroy(),
 				// hence the use of AsyncTask instead of a raw thread.
@@ -109,7 +109,7 @@ public class MainActivity extends Activity {
 
 				};
 				mRegisterTask.execute(null, null, null);
-			}
+			//}
 		}
 	}
 	

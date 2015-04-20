@@ -2,6 +2,7 @@ package com.androidhive.pushnotifications;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 public final class CommonUtilities {
 	
@@ -10,6 +11,11 @@ public final class CommonUtilities {
 
     // Google project id
     static final String SENDER_ID = "815131688308"; 
+    
+    //////////////////
+    public static SharedPreferences settings;
+    public  static SharedPreferences.Editor editor;
+    public static final String KEE_LOGIN = "KEEP_LOGIN";
 
     /**
      * Tag used on log messages.
